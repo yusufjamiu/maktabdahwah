@@ -6,7 +6,7 @@ const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="fixed top-0 left-0 z-20 flex">
+    <div className="flex">
       <div
         className={`bg-slate-600 h-screen p-5 pt-8 ${
           open ? 'w-72 sm:w-35' : 'w-20 sm:w-15'
