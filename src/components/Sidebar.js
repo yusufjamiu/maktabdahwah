@@ -9,7 +9,7 @@ const Sidebar = () => {
     <div className="flex">
       <div
         className={`bg-slate-600 h-screen p-5 pt-8 ${
-          open ? 'w-72 sm:w-40' : 'w-20 sm:15'
+          open ? 'w-72 sm:w-35' : 'w-20 sm:w-15'
         } duration-300 relative`}
       >
         <BsArrowLeftShort
