@@ -1,12 +1,13 @@
+// App.js
 import React from 'react';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 
 const App = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex">
       <Sidebar />
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-6 ml-20 sm:ml-60">
         <Navbar />
         {/* Main content goes here */}
         <div>
