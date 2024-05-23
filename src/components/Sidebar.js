@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsArrowLeftShort } from 'react-icons/bs';
+import { BsArrowLeftShort, BsSearch } from 'react-icons/bs';
 import logoImage from '../assets/Maktab.JPG';
 
 const Sidebar = () => {
@@ -31,6 +31,24 @@ const Sidebar = () => {
           >
             MaktabDahwah
           </span>
+        </div>
+        <div
+          className={`flex items-center rounded-md bg-gray-400 mt-6 ${
+            !open ? 'px-2.5' : 'px-4'
+          } py-2`}
+        >
+          <BsSearch
+            className={`text-white text-lg block float-left cursor-pointer ${
+              open && 'mr-2'
+            }`}
+          />
+          <input
+            type={"search"}
+            placeholder="search"
+            className={`text-base bg-transparent w-full text-white focus:outline-none ${
+              !open && 'hidden'
+            }`}
+          />
         </div>
       </div>
     </div>
