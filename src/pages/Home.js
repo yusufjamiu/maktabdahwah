@@ -6,6 +6,7 @@ import { SiSololearn } from "react-icons/si";
 import { FaMosque, FaBoreHole } from "react-icons/fa6";
 import { FcDonate } from "react-icons/fc";
 import { PiBowlFoodFill } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,29 +25,28 @@ const Home = () => {
       <div className="mb-8">
         <img src={images[currentImageIndex]} alt="Carousel" className="w-full h-64 object-cover" />
       </div>
-
       <h2 className="text-2xl text-center font-bold mb-4">Our Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
-        <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
+        <Link to="/mosques-built" className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
           <FaMosque className="text-4xl mb-2" />
           <span>37 Mosques Built</span>
-        </div>
-        <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
+        </Link>
+        <Link to="/bore-hole" className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
           <FaBoreHole className="text-4xl mb-2" />
           <span>230+ BoreHole</span>
-        </div>
-        <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
+        </Link>
+        <Link to="/iftar" className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
           <PiBowlFoodFill className="text-4xl mb-2" />
           <span>Iftar</span>
-        </div>
-        <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
+        </Link>
+        <Link to="/empowerment-program" className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
           <SiSololearn className="text-4xl mb-2" />
           <span>Empowerment Program</span>
-        </div>
-        <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
+        </Link>
+        <Link to="/donate" className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
           <FcDonate className="text-4xl mb-2" />
           <span>Donate Now!!!</span>
-        </div>
+        </Link>
       </div>
 
       <h1 className="text-4xl font-bold mb-8">Welcome to Maktab Dahwah</h1>

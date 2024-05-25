@@ -11,6 +11,11 @@ import Calendar from './pages/Calendar';
 import Ramadan from './pages/Ramadan';
 import Scholarships from './pages/Scholarships';
 import SolatTime from './pages/SolatTime';
+import MosquesBuilt from './pages/MosquesBuilt';
+import BoreHole from './pages/BoreHole';
+import Iftar from './pages/Iftar';
+import EmpowermentProgram from './pages/EmpowermentProgram';
+import Donate from './pages/Donate';
 
 const App = () => {
   return (
@@ -30,6 +35,11 @@ const App = () => {
               <Route path="/ramadan" element={<Ramadan />} />
               <Route path="/scholarships" element={<Scholarships />} />
               <Route path="/solat-time" element={<SolatTime />} />
+              <Route path="/mosques-built" element={<MosquesBuilt />} />
+              <Route path="/bore-hole" element={<BoreHole />} />
+              <Route path="/iftar" element={<Iftar />} />
+              <Route path="/empowerment-program" element={<EmpowermentProgram />} />
+              <Route path="/donate" element={<Donate />} />
             </Routes>
           </div>
         </div>
