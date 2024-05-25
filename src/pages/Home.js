@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import image1 from '.././assets/medical1.JPG';
 import image2 from '.././assets/distribution1.JPG';
 import image3 from '.././assets/distribution2.JPG';
-import { BsBook, BsCalendarEvent, BsBriefcase, BsLaptop, BsPiggyBank } from 'react-icons/bs';
+import { SiSololearn } from "react-icons/si";
+import { FaMosque, FaBoreHole } from "react-icons/fa6";
+import { FcDonate } from "react-icons/fc";
+import { PiBowlFoodFill } from "react-icons/pi";
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -22,27 +25,27 @@ const Home = () => {
         <img src={images[currentImageIndex]} alt="Carousel" className="w-full h-64 object-cover" />
       </div>
 
-      <h2 className="text-2xl font-bold mb-4">Our Projects</h2>
+      <h2 className="text-2xl text-center font-bold mb-4">Our Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
         <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
-          <BsBook className="text-4xl mb-2" />
-          <span>Project 1</span>
+          <FaMosque className="text-4xl mb-2" />
+          <span>37 Mosques Built</span>
         </div>
         <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
-          <BsCalendarEvent className="text-4xl mb-2" />
-          <span>Project 2</span>
+          <FaBoreHole className="text-4xl mb-2" />
+          <span>230+ BoreHole</span>
         </div>
         <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
-          <BsBriefcase className="text-4xl mb-2" />
-          <span>Project 3</span>
+          <PiBowlFoodFill className="text-4xl mb-2" />
+          <span>Iftar</span>
         </div>
         <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
-          <BsLaptop className="text-4xl mb-2" />
-          <span>Project 4</span>
+          <SiSololearn className="text-4xl mb-2" />
+          <span>Empowerment Program</span>
         </div>
         <div className="bg-gray-200 p-6 rounded-md flex flex-col items-center">
-          <BsPiggyBank className="text-4xl mb-2" />
-          <span>Project 5</span>
+          <FcDonate className="text-4xl mb-2" />
+          <span>Donate Now!!!</span>
         </div>
       </div>
 
