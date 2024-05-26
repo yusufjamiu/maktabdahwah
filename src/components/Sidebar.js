@@ -5,20 +5,10 @@ import logoImage from '../assets/Maktab.JPG';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
-  const [homeOpen, setHomeOpen] = useState(false);
-  const [lecturesOpen, setLecturesOpen] = useState(false);
-  const [ramadanOpen, setRamadanOpen] = useState(false);
-  const [quranOpen, setQuranOpen] = useState(false);
-  const [eventsOpen, setEventsOpen] = useState(false);
-  const [scholarshipsOpen, setScholarshipsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
 
   const toggleSubmenu = (menu) => {
-    setHomeOpen(menu === 'home');
-    setLecturesOpen(menu === 'lectures');
-    setRamadanOpen(menu === 'ramadan');
-    setQuranOpen(menu === 'quran');
-    setEventsOpen(menu === 'events');
-    setScholarshipsOpen(menu === 'scholarships');
+    setActiveMenu(activeMenu === menu ? null : menu);
   };
 
   return (
@@ -46,23 +36,23 @@ const Sidebar = () => {
           <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
             <Link
               to="/"
-              className={`flex items-center text-white hover:bg-gray-700 rounded-md p-2 ${homeOpen && 'bg-gray-700'}`}
+              className={`flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full`}
               onClick={() => toggleSubmenu('home')}
             >
               <BsHouse className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Home</span>
             </Link>
           </div>
-          <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
+          <div className={`flex flex-col rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
             <Link
               to="/lectures"
-              className={`flex items-center text-white hover:bg-gray-700 rounded-md p-2 ${lecturesOpen && 'bg-gray-700'}`}
+              className={`flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full`}
               onClick={() => toggleSubmenu('lectures')}
             >
               <BsMusicNoteList className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Lectures</span>
             </Link>
-            {lecturesOpen && (
+            {activeMenu === 'lectures' && (
               <div className={`pl-6 ${!open && 'hidden'}`}>
                 <Link to="/lectures/lecture1" className="block text-white hover:bg-gray-700 rounded-md p-2">
                   Lecture 1
@@ -76,16 +66,16 @@ const Sidebar = () => {
               </div>
             )}
           </div>
-          <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
+          <div className={`flex flex-col rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
             <Link
               to="/ramadan"
-              className={`flex items-center text-white hover:bg-gray-700 rounded-md p-2 ${ramadanOpen && 'bg-gray-700'}`}
+              className={`flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full`}
               onClick={() => toggleSubmenu('ramadan')}
             >
               <BsCalendar className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Ramadan</span>
             </Link>
-            {ramadanOpen && (
+            {activeMenu === 'ramadan' && (
               <div className={`pl-6 ${!open && 'hidden'}`}>
                 <Link to="/ramadan/schedule" className="block text-white hover:bg-gray-700 rounded-md p-2">
                   Schedule
@@ -99,16 +89,16 @@ const Sidebar = () => {
               </div>
             )}
           </div>
-          <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
+          <div className={`flex flex-col rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
             <Link
               to="/quran"
-              className={`flex items-center text-white hover:bg-gray-700 rounded-md p-2 ${quranOpen && 'bg-gray-700'}`}
+              className={`flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full`}
               onClick={() => toggleSubmenu('quran')}
             >
               <BsBook className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Quran</span>
             </Link>
-            {quranOpen && (
+            {activeMenu === 'quran' && (
               <div className={`pl-6 ${!open && 'hidden'}`}>
                 <Link to="/quran/recitation" className="block text-white hover:bg-gray-700 rounded-md p-2">
                   Recitation
@@ -122,16 +112,16 @@ const Sidebar = () => {
               </div>
             )}
           </div>
-          <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
+          <div className={`flex flex-col rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
             <Link
               to="/events"
-              className={`flex items-center text-white hover:bg-gray-700 rounded-md p-2 ${eventsOpen && 'bg-gray-700'}`}
+              className={`flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full`}
               onClick={() => toggleSubmenu('events')}
             >
               <BsCalendarEvent className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Events</span>
             </Link>
-            {eventsOpen && (
+            {activeMenu === 'events' && (
               <div className={`pl-6 ${!open && 'hidden'}`}>
                 <Link to="/events/upcoming" className="block text-white hover:bg-gray-700 rounded-md p-2">
                   Upcoming
@@ -145,16 +135,16 @@ const Sidebar = () => {
               </div>
             )}
           </div>
-          <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
+          <div className={`flex flex-col rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
             <Link
               to="/scholarships"
-              className={`flex items-center text-white hover:bg-gray-700 rounded-md p-2 ${scholarshipsOpen && 'bg-gray-700'}`}
+              className={`flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full`}
               onClick={() => toggleSubmenu('scholarships')}
             >
               <BsMortarboardFill className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Scholarships</span>
             </Link>
-            {scholarshipsOpen && (
+            {activeMenu === 'scholarships' && (
               <div className={`pl-6 ${!open && 'hidden'}`}>
                 <Link to="/scholarships/apply" className="block text-white hover:bg-gray-700 rounded-md p-2">
                   Apply
@@ -169,19 +159,19 @@ const Sidebar = () => {
             )}
           </div>
           <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
-            <Link to="/blog" className="flex items-center text-white hover:bg-gray-700 rounded-md p-2">
+            <Link to="/blog" className="flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full">
               <BsBook className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Blog</span>
             </Link>
           </div>
           <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
-            <Link to="/solat-time" className="flex items-center text-white hover:bg-gray-700 rounded-md p-2">
+            <Link to="/solat-time" className="flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full">
               <BsCalendar className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Solat Time</span>
             </Link>
           </div>
           <div className={`flex items-center rounded-md ${!open ? 'px-2.5' : 'px-4'} py-2`}>
-            <Link to="/calendar" className="flex items-center text-white hover:bg-gray-700 rounded-md p-2">
+            <Link to="/calendar" className="flex items-center text-white rounded-md p-2 hover:bg-gray-700 w-full">
               <BsMoonStarsFill className={`text-lg mr-2 ${!open && 'mx-auto'}`} />
               <span className={`${!open && 'hidden'}`}>Calendar</span>
             </Link>
