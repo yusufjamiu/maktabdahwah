@@ -2,8 +2,8 @@ import React from 'react';
 
 const Donate = () => {
   const banks = [
-    { name: 'Islamic Bank', accountName: 'Maktab Dahwah Foundation', accountNumber: '1234567890' },
-    { name: 'Maktab Dahwah Bank', accountName: 'Maktab Dahwah Charity', accountNumber: '0987654321' },
+    { name: 'Jaiz Bank', accountName: 'Maktab for Dahwah and Charity', accountNumber: '0017226109' },
+    { name: 'Lotus Bank', accountName: 'Maktab for Dahwah and Charity', accountNumber: '1000864711' },
   ];
 
   return (
