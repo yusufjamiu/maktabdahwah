@@ -63,14 +63,14 @@ const Sidebar = () => {
             </div>
             {lecturesOpen && (
               <div className={`pl-6 ${!open && 'hidden'}`}>
-                <Link to="/lectures/lecture1" className="block text-white hover:bg-gray-700 rounded-md p-2">
-                  Lecture 1 / محاضرة 1
+                <Link to="/lectures/yoruba" className="block text-white hover:bg-gray-700 rounded-md p-2">
+                  Yoruba / يوربا
                 </Link>
-                <Link to="/lectures/lecture2" className="block text-white hover:bg-gray-700 rounded-md p-2">
-                  Lecture 2 / محاضرة 2
+                <Link to="/lectures/english" className="block text-white hover:bg-gray-700 rounded-md p-2">
+                  English / انجليزية 
                 </Link>
-                <Link to="/lectures/lecture3" className="block text-white hover:bg-gray-700 rounded-md p-2">
-                  Lecture 3 / محاضرة 3
+                <Link to="/lectures/arabic" className="block text-white hover:bg-gray-700 rounded-md p-2">
+                  Arabic / عربية
                 </Link>
               </div>
             )}
