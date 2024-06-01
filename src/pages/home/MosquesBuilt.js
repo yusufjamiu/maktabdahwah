@@ -1,9 +1,9 @@
 import React from 'react';
-import mosque1 from '../assets/Maktab.JPG';
-import mosque2 from '../assets/Maktab.JPG';
-import mosque3 from '../assets/Maktab.JPG';
-import mosque4 from '../assets/Maktab.JPG';
-import mosque5 from '../assets/Maktab.JPG';
+import mosque1 from '../../assets/Maktab.JPG';
+import mosque2 from '../../assets/Maktab.JPG';
+import mosque3 from '../../assets/Maktab.JPG';
+import mosque4 from '../../assets/Maktab.JPG';
+import mosque5 from '../../assets/Maktab.JPG';
 
 const MosquesBuilt = () => {
   const mosques = [
